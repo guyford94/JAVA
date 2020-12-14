@@ -1,0 +1,73 @@
+כתוב תוכנית שבונה שני אובייקטים מסוג דלת עם צבע גובה ורוחב.
+כל הערכים בשני האוביקטים צריכים להיות שונים.
+בסוף אתם מדפיסים את כל התכונות של האוביקטים.
+
+
+package test;
+
+public class Dor {
+
+	private int high;
+	private String color;
+	private int width;
+	
+	
+	public Dor(int highP,String colorP,int widthP) {
+		this.high = highP;
+		this.color = colorP;
+		this.width = widthP;
+	}
+
+	
+
+	
+	
+	public static void main(String[] args) {
+		Dor Dor_x = new Dor(158,"red",90);
+		Dor Dor_y = new Dor(200,"black",120);
+		System.out.println(Dor_x.getHigh());
+		System.out.println(Dor_x.getColor());
+		System.out.println(Dor_x.getWidth());
+		System.out.println(Dor_y.getHigh());
+		System.out.println(Dor_y.getColor());
+		System.out.println(Dor_y.getWidth());
+
+	}
+
+	public int getHigh() {
+		return high;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public int getWidth() {
+		return width;
+	}
+
+
+
+
+
+	public void setHigh(int high) {
+		this.high = high;
+	}
+
+
+
+
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+
+
+
+
+	public void setWidth(int width) {
+		this.width = width;
+	}
+
+}
