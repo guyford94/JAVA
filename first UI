@@ -1,0 +1,79 @@
+import javax.swing.JFrame;
+
+public class Fenetre extends JFrame {
+	
+	private Panneau pan = new Panneau();
+	
+	public Fenetre() {
+			this.setTitle("Game of guy");
+			this.setSize(500, 500);
+			this.setLocationRelativeTo(null);
+			this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			this.setContentPane(pan);
+			this.setVisible(true);
+			go();
+
+
+
+	}
+	
+	
+	private void go() {
+		
+	
+		int x = pan.getPosX();
+		int y = pan.getPosY();
+		
+		boolean backX = false;
+		boolean backY = false;
+	
+		while(true) {
+			
+			pan.removeAll();
+			
+			if(x<1) {
+				backX = false;
+			}
+			
+			if(x>pan.getWidth()-30) {
+				backX = true;
+			}
+			
+			if(y<1) {
+				backY = false;
+			}
+			
+			if(y>pan.getHeight()-30) {
+				backY = true;
+			}
+			
+			if(backX == false) {
+				x+=10;
+				pan.setPosX(x);
+				
+			} else {
+				x-=10;
+				pan.setPosX(x);
+			}
+			
+			if(backY == false) {
+				y+=10;
+				pan.setPosY(++y);
+				
+			} else {
+				y-=10;
+				pan.setPosY(--y);
+			}
+	
+			this.setTitle("Game of guy");
+			this.setSize(500, 500);
+			this.setLocationRelativeTo(null);
+			this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			this.setContentPane(pan);
+			this.setVisible(true);
+			try {
+				Thread.sleep(30);
+			} catch (InterruptedException e) {
+		
+}
+		}	}	}
